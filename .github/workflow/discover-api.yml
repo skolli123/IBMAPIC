@@ -6,7 +6,7 @@ env:
   API_HOST: apps.67e5e21a0fe7abc24ece31e7.am1.techzone.ibm.com
   PLATFORM_API_PREFIX: platform-api
   PROVIDER_ORG: cp4i-demo-org
-  API_FILES: discover-api.yml
+  API_FILES: api-discovery-Call.yml
 
 jobs:
   run-discovery:
