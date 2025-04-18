@@ -1,0 +1,124 @@
+swagger: '2.0'
+info:
+  title: API-Discovery-Call
+  x-ibm-name: api-discovery-call
+  version: 1.0.0
+  description: API-Discovery Test API
+x-ibm-configuration:
+  cors:
+    enabled: false
+  gateway: datapower-api-gateway
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  assembly:
+    execute:
+      - invoke:
+          version: 2.0.0
+          title: invoke
+          backend-type: detect
+          header-control:
+            type: allowlist
+            values: []
+          parameter-control:
+            type: allowlist
+            values: []
+          timeout: 60
+          verb: keep
+          chunked-uploads: true
+          persistent-connection: true
+          target-url: https://api.restful-api.dev/objects
+          follow-redirects: false
+          inject-proxy-headers: true
+  properties:
+    target-url:
+      value: http://example.com/operation-name
+      description: The URL of the target service
+      encoded: false
+  activity-log:
+    enabled: true
+    success-content: activity
+    error-content: payload
+basePath: /api-discovery
+paths:
+  /APIPath:
+    get:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    put:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    post:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    delete:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    head:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    patch:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    options:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    parameters: []
+schemes:
+  - https
+securityDefinitions:
+  ClientID:
+    type: apiKey
+    x-key-type: client_id
+    name: X-IBM-Client-Id
+    in: header
+  ClientSecret:
+    type: apiKey
+    x-key-type: client_secret
+    name: X-IBM-Client-Secret
+    in: header
+security:
+  - ClientID: []
+    ClientSecret: []
+consumes:
+  - application/xml
+  - application/json
+produces:
+  - application/json
+  - application/xml
